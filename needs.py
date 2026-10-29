@@ -1,4 +1,7 @@
-""""""
+"""
+    Needs Class methods
+    Hunger, Energy, Play
+"""
 
 from pet import Pet
 
@@ -11,7 +14,7 @@ class Needs:
 
 
     def print_menu(self):
-        """"""
+        """Prints treat menu"""
         treats = {
             1: "Fish shaped crackers (+10 hunger)",
             2: "Wet, chunky sustenance from can (+20 hunger)",
@@ -27,7 +30,7 @@ class Needs:
 
 
     def choose_treat(self):
-        """"""
+        """Allows player to choose from treat menu"""
         treat_choice = input("\nPlease choose 1-3: ")
         treat_choice = int(treat_choice)
 
@@ -37,8 +40,7 @@ class Needs:
 
 
     def calculate_hunger(self, treat_choice):
-        """"""
-        # if treat_choice == 1:
+        """Caculates new Hunger based off of treat choice from choose_treat()"""
         if treat_choice == 1:
             self.hunger += 10
 

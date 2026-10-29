@@ -1,4 +1,7 @@
-""""""
+""" 
+    Main game file 
+    Virtual pet terminal
+"""
 
 
 from needs import Needs
@@ -11,7 +14,7 @@ needs = Needs()
 def main():
     """Main game function"""
     while True:
-        print("Welcome to My Virtual Pet")
+        print("Welcome to: My Virtual Pet")
         print("...")
         print("Your pet's name is Mocci and humans know them to be of the species known as 'Cat'")
         print("...")
@@ -39,6 +42,11 @@ def main_menu():
     menu_selection = input("\nYour choice (1-4): ")
     menu_selection = int(menu_selection)
 
+    menu_route(menu_selection)
+
+
+def menu_route(menu_selection):
+    """Routes player based on menu selection"""
     if menu_selection == 1:
         # feed_pet() # method in Needs class
         needs.print_menu()
