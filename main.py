@@ -9,13 +9,26 @@ def main():
         print("...")
         print("Please pick an option from below to care for your cat known as Mocci.")
 
+        main_menu()
+        
         action = get_input()
         if action == "q":
             break
 
 
 def main_menu():
-    pass
+    """Main menu selection process"""
+    menu = {
+        1: "Give your pet sustenance (Feed)", 
+        2: "Play with magic light (Laser)",
+        3: "Put pet in nest for regeneration (Sleep)",
+        4: "Audit pet's need levels (Mood Checker)",    
+    }
+
+    for key, value in menu.items():
+        print(f"{key}: {value}")
+
+    menu_selection = input("Your choice (1-4): ")
 
 
 
