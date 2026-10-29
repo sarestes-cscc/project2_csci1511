@@ -1,3 +1,8 @@
+""""""
+
+
+from needs import Needs
+from pet import Pet
 
 
 def main():
@@ -10,7 +15,7 @@ def main():
         print("Please pick an option from below to care for your cat known as Mocci.")
 
         main_menu()
-        
+
         action = get_input()
         if action == "q":
             break
@@ -29,7 +34,23 @@ def main_menu():
         print(f"{key}: {value}")
 
     menu_selection = input("Your choice (1-4): ")
+    menu_selection = int(menu_selection)
 
+    if menu_selection == 1:
+        # feed_pet() # method in Needs class
+        pass
+
+    if menu_selection == 2:
+        # laser_toy() # method in Needs class
+        pass
+
+    if menu_selection == 3:
+        # sleep() # method in Needs class
+        pass
+
+    if menu_selection == 4:
+        # mood() # method in Pet class
+        pass
 
 
 def get_input():
