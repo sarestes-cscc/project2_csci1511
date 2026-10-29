@@ -5,6 +5,9 @@ from needs import Needs
 from pet import Pet
 
 
+needs = Needs()
+
+
 def main():
     """Main game function"""
     while True:
@@ -12,7 +15,7 @@ def main():
         print("...")
         print("Your pet's name is Mocci and humans know them to be of the species known as 'Cat'")
         print("...")
-        print("Please pick an option from below to care for your cat known as Mocci.")
+        print("Please pick an option from below to care for your cat known as Mocci.\n")
 
         main_menu()
 
@@ -33,12 +36,12 @@ def main_menu():
     for key, value in menu.items():
         print(f"{key}: {value}")
 
-    menu_selection = input("Your choice (1-4): ")
+    menu_selection = input("\nYour choice (1-4): ")
     menu_selection = int(menu_selection)
 
     if menu_selection == 1:
         # feed_pet() # method in Needs class
-        pass
+        needs.print_menu()
 
     if menu_selection == 2:
         # laser_toy() # method in Needs class
@@ -54,7 +57,7 @@ def main_menu():
 
 
 def get_input():
-    """"""
+    """ just here for testing """
     user_input = input("Please enter input: ")
     return user_input
 

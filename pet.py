@@ -2,4 +2,7 @@
 
 
 class Pet:
-    pass
+    """"""
+    def __init__(self):
+        """"""
+        self.hunger = 20
