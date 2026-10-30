@@ -14,7 +14,7 @@ needs = Needs()
 def main():
     """Main game function"""
     while True:
-        print("Welcome to: My Virtual Pet")
+        print("Welcome to My Virtual Pet for 'Humans'")
         print("...")
         print("Your pet's name is Mocci and humans know them to be of the species known as 'Cat'")
         print("...")
@@ -31,7 +31,7 @@ def main_menu():
     """Main menu selection process"""
     menu = {
         1: "Give your pet sustenance (Feed)", 
-        2: "Play with magic light (Laser)",
+        2: "Play with unnecessary items bought for happiness (Play)",
         3: "Put pet in nest for regeneration (Sleep)",
         4: "Audit pet's need levels (Mood Checker)",    
     }
@@ -48,12 +48,10 @@ def main_menu():
 def menu_route(menu_selection):
     """Routes player based on menu selection"""
     if menu_selection == 1:
-        # feed_pet() # method in Needs class
-        needs.print_menu()
+        needs.print_treat_menu()
 
     if menu_selection == 2:
-        # laser_toy() # method in Needs class
-        pass
+        needs.print_toy_menu()
 
     if menu_selection == 3:
         # sleep() # method in Needs class
