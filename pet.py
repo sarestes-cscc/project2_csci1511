@@ -7,3 +7,4 @@ class Pet:
         """"""
         self.hunger = 20
         self.happiness = 50
+        self.energy = 80
