@@ -18,16 +18,16 @@ def main():
         print("Welcome to My Virtual Pet for 'Humans'")
         print("\nYour pet's name is Mocci and humans know them to be of the species known as 'Cat'")
 
-        print("...")
-        print("...")
+        print("\n...")
+        print("...\n")
 
         print("Please pick an option from below to care for your cat known as Mocci.\n")
 
         main_menu()
 
         replay = input("Would you like to continue? y or n: ")
-        print("...")
-        print("...")
+        print("\n...")
+        print("...\n")
 
         if replay == "n":
             break

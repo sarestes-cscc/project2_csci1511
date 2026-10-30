@@ -18,13 +18,12 @@ class Needs:
         """Prints treat menu"""
         treats = {
             1: "Fish shaped crackers (+10 hunger)",
-            2: "Wet, chunky sustenance from can (+20 hunger)",
-            3: "Flaky, green crazy dust (-5 hunger)",
+            2: "Wet, chunky sustenance from can (+20 hunger / +10 happiness)",
+            3: "Flaky, green crazy dust (-5 hunger / +15 happiness)",
         }
 
-        print("...")
-        print("...")
-        print(f"Current hunger: {self.hunger}")
+        print("\n...")
+        print("...\n")
         print("\nThe sustenance options are:\n")
 
         for key, value in treats.items():
@@ -50,13 +49,16 @@ class Needs:
 
         if treat_choice == 2:
             self.hunger += 20
+            self.happiness += 10
 
         if treat_choice == 3:
             self.hunger -= 5
+            self.happiness += 15
 
         print(f"\nCurrent Hunger level: {self.hunger}")
-        print("...")
-        print("...")
+        print(f"\nCurrent happiness level: {self.happiness}")
+        print("\n...")
+        print("...\n")
         return self.hunger
 
 
@@ -69,8 +71,8 @@ class Needs:
             3: "Play with the ball of fluffy string (yarn)",
         }
 
-        print("...")
-        print("...")
+        print("\n...")
+        print("...\n")
         print("\nWe are are still trying to understand what Mocci cat likes. Point value for each happiness item is unknown. ")
         print("\nWe begrudingly own the following Mocci cat happiness items:\n")
 
@@ -101,23 +103,30 @@ class Needs:
 
             if play_time >= 20:
                 print("\nMocci the cat seems to enjoy the flimsy magic stick.")
-                print("\n+ 15 happpiness")
-                
+                print("\nMocci's hunger level decreased due to play.")
+                print("\n+15 happpiness")
+                print("\n-5 hunger")
+
                 self.happiness += 15
+                self.hunger -= 5
 
             if play_time < 20:
                 print("\nMocci the cat seems to be the opposite of the happy emotion. Maybe Mocci the cat wants to spend more time with its 'human'.")
-                print("\n+ 5 happiness")
+                print("\n+5 happiness")
                 
                 self.happiness += 5
 
         if toy_choice == 3:
             print("\nMocci the cat seems thrilled about any time spent with its 'human' and the ball of fluffy string.")
-            print("\n+ 20 happiness")
+            print("\nMocci's hunger level decreased due to play.")
+            print("\n+20 happiness")
+            print("\n-10 hunger")
 
             self.happiness += 20
+            self.hunger -= 10
 
         print(f"\nCurrent happiness level: {self.happiness}")
-        print("...")
-        print("...")
+        print(f"\nCurrent Hunger level: {self.hunger}")
+        print("\n...")
+        print("...\n")
         return self.happiness
