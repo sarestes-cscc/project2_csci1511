@@ -22,6 +22,9 @@ class Needs:
             3: "Flaky, green crazy dust (-5 hunger)",
         }
 
+        print("...")
+        print("...")
+        print(f"Current hunger: {self.hunger}")
         print("\nThe sustenance options are:\n")
 
         for key, value in treats.items():
@@ -51,8 +54,11 @@ class Needs:
         if treat_choice == 3:
             self.hunger -= 5
 
-        print(f"\n{self.hunger}")
+        print(f"\nCurrent Hunger level: {self.hunger}")
+        print("...")
+        print("...")
         return self.hunger
+
 
 
     def print_toy_menu(self):
@@ -64,9 +70,9 @@ class Needs:
         }
 
         print("...")
-        print("We are are still trying to understand what Mocci cat likes. Point value for each happiness item is unknown. ")
         print("...")
-        print("We begrudingly own the following Mocci cat happiness items: \n")
+        print("\nWe are are still trying to understand what Mocci cat likes. Point value for each happiness item is unknown. ")
+        print("\nWe begrudingly own the following Mocci cat happiness items:\n")
 
         for key, value in toys.items():
                     print(f"{key}: {value}")
@@ -86,8 +92,7 @@ class Needs:
         """Calculates new happiness based off toy choice"""     
         if toy_choice == 1:
             print("\nMocci the cat walks away from the most expensive happiness item, bored and uninterested.")
-            print("...")
-            print("Mocci the cat seems to be of too high intelligence to fall for the magic light stick.")
+            print("\nMocci the cat seems to be of too high intelligence to fall for the magic light stick.")
             print("\n+ 0 happiness")
 
         if toy_choice == 2:
@@ -112,5 +117,7 @@ class Needs:
 
             self.happiness += 20
 
-        print(self.happiness)
+        print(f"\nCurrent happiness level: {self.happiness}")
+        print("...")
+        print("...")
         return self.happiness

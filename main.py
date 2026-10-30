@@ -9,21 +9,27 @@ from pet import Pet
 
 
 needs = Needs()
+pet = Pet()
 
 
 def main():
     """Main game function"""
     while True:
         print("Welcome to My Virtual Pet for 'Humans'")
+        print("\nYour pet's name is Mocci and humans know them to be of the species known as 'Cat'")
+
         print("...")
-        print("Your pet's name is Mocci and humans know them to be of the species known as 'Cat'")
         print("...")
+
         print("Please pick an option from below to care for your cat known as Mocci.\n")
 
         main_menu()
 
-        action = get_input()
-        if action == "q":
+        replay = input("Would you like to continue? y or n: ")
+        print("...")
+        print("...")
+
+        if replay == "n":
             break
 
 
@@ -35,11 +41,11 @@ def main_menu():
         3: "Put pet in nest for regeneration (Sleep)",
         4: "Audit pet's need levels (Mood Checker)",    
     }
-
+    print("Emotional level modifiers:\n")
     for key, value in menu.items():
         print(f"{key}: {value}")
 
-    menu_selection = input("\nYour choice (1-4): ")
+    menu_selection = input("\nPlease pick 1-4: ")
     menu_selection = int(menu_selection)
 
     menu_route(menu_selection)
@@ -61,10 +67,5 @@ def menu_route(menu_selection):
         # mood() # method in Pet class
         pass
 
-
-def get_input():
-    """ just here for testing """
-    user_input = input("Please enter input: ")
-    return user_input
 
 main()
