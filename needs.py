@@ -19,7 +19,7 @@ class Needs:
         """Prints treat menu"""
         treats = {
             1: "Fish shaped crackers (+10 hunger)",
-            2: "Wet, chunky sustenance from can (+20 hunger / +10 happiness)",
+            2: "Wet, chunky sustenance from can (+40 hunger / +10 happiness)",
             3: "Flaky, green crazy dust (-5 hunger / +15 happiness)",
         }
 
@@ -49,7 +49,7 @@ class Needs:
             self.hunger += 10
 
         if treat_choice == 2:
-            self.hunger += 20
+            self.hunger += 40
             self.happiness += 10
 
         if treat_choice == 3:
@@ -109,11 +109,11 @@ class Needs:
             print("\nMocci's hunger and energy levels decreased due to play.")
             print("\n+20 happiness")
             print("\n-10 hunger")
-            print("\n-30 energy")
+            print("\n-40 energy")
 
             self.happiness += 20
             self.hunger -= 10
-            self.energy -= 30
+            self.energy -= 40
 
         print(f"\nCurrent happiness level: {self.happiness}")
         print(f"\nCurrent hunger level: {self.hunger}")
@@ -128,12 +128,12 @@ class Needs:
             print("\nMocci the cat seems to enjoy the flimsy magic stick.")
             print("\nMocci's hunger and energy levels decreased due to play.")
             print("\n+15 happpiness")
-            print("\n-5 hunger")
-            print("\n-20 energy")
+            print("\n-15 hunger")
+            print("\n-30 energy")
 
             self.happiness += 15
-            self.hunger -= 5
-            self.energy -= 20
+            self.hunger -= 15
+            self.energy -= 30
 
         if play_time < 20:
             print("\nMocci the cat seems to be the opposite of the happy emotion. Maybe Mocci the cat wants to spend more time with its 'human'.")
@@ -174,13 +174,21 @@ class Needs:
     def calculate_energy(self, sleep_choice):
         """Caculates new Hunger based off of treat choice from choose_treat()"""
         if sleep_choice == 1:
+            print("\nThe Mocci cat looks a little regenerated but also a little bit like it might take a bite out of its 'human' for waking it up.")
+            print("\n+20 energy")
             self.energy += 20
 
         if sleep_choice == 2:
+            print("\nWe do not know if we like co-regeneration with a Mocci cat. Mocci cat seems to like co-regeneration with its 'human'.")
+            print("\n+40 energy")
+            print("\n-20 hunger")
             self.energy += 40
             self.hunger -= 20
 
         if sleep_choice == 3:
+            print("\nMocci cat looks refreshed but definitely like it wants a bite out of its 'human' now.")
+            print("\n+100 energy")
+            print("\n-60 hunger")
             self.energy += 100
             self.hunger -= 60
 
