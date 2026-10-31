@@ -16,7 +16,7 @@ def main():
     """Main game function"""
     while True:
         print("Welcome to My Virtual Pet for 'Humans'")
-        print("\nYour pet's name is Mocci and it is of the species known as 'Cat'.")
+        print("\nYour pet's name is Mocci and he is of the species known as 'Cat'.")
 
         print("\n...")
         print("...\n")
@@ -60,7 +60,6 @@ def menu_route(menu_selection):
         needs.print_toy_menu()
 
     if menu_selection == 3:
-        # sleep() # method in Needs class
         needs.print_sleep_menu()
 
     if menu_selection == 4:
