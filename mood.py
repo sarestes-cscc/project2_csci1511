@@ -4,6 +4,8 @@
 """
 
 from needs import Needs
+from pathlib import Path
+import json
 
 class Mood:
     """Handles mood and need level actions"""
@@ -29,21 +31,23 @@ class Mood:
             print(f"{key}: {value}")
 
         if self.needs.hunger < 80 or self.needs.happiness < 60 or self.needs.energy <= 30:
-            self.print_mocci_notes()
+            print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
 
+            if self.needs.happiness < 60:
+                mocci_note_happiness = ("\n'My happiness is decreasing human. I demand you play with me and my fluffy string ball.'")
+                print(mocci_note_happiness)
 
-    def print_mocci_notes(self):
-        """"""
-        print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
+            if self.needs.hunger < 80:
+                mocci_note_hunger = ("\n'I am demanding food now. You must run and fetch food, human! I will not wait.'")
+                print(mocci_note_hunger)
 
-        if self.needs.happiness < 60:
-            print("\n'My happiness is decreasing human. I demand you play with me and my fluffy string ball.'")
-
-        if self.needs.hunger < 80:
-            print("\n'I am demanding food now. You must run and fetch food, human! I will not wait.'")
-
-        if self.needs.energy <= 30:
-            print("\n'Do not bother me, human. I am too tired to deal with you.'")
+            if self.needs.energy <= 30:
+                mocci_note_energy = ("\n'Do not bother me, human. I am too tired to deal with you.'")
+                print(mocci_note_energy)
 
         print("\n...")
         print("...\n")
+
+        with open("audit.json", "a") as file:
+            file.write(json.dumps(need_levels) + "\n")
+
