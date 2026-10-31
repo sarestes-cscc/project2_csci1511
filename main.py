@@ -6,10 +6,12 @@
 
 from needs import Needs
 from pet import Pet
+from mood import Mood
 
 
 needs = Needs()
 pet = Pet()
+mood = Mood(needs)
 
 
 def main():
@@ -25,7 +27,7 @@ def main():
 
         main_menu()
 
-        replay = input("Would you like to continue? y or n: ")
+        replay = input("\nWould you like to continue? y or n: ")
         print("\n...")
         print("...\n")
 
@@ -63,8 +65,8 @@ def menu_route(menu_selection):
         needs.print_sleep_menu()
 
     if menu_selection == 4:
-        # mood() # method in Pet class
-        pass
+        mood.print_need_levels()
+        
 
 
 main()
