@@ -56,8 +56,6 @@ class Needs:
             self.hunger -= 5
             self.happiness += 15
 
-        print(f"\nCurrent hunger level: {self.hunger}")
-        print(f"\nCurrent happiness level: {self.happiness}")
         print("\n...")
         print("...\n")
         return self.hunger
@@ -115,9 +113,6 @@ class Needs:
             self.hunger -= 10
             self.energy -= 40
 
-        print(f"\nCurrent happiness level: {self.happiness}")
-        print(f"\nCurrent hunger level: {self.hunger}")
-        print(f"\nCurrent energy level: {self.energy}")
         print("\n...")
         print("...\n")
         return self.happiness
@@ -177,7 +172,9 @@ class Needs:
         if sleep_choice == 1:
             print("\nThe Mocci cat looks a little regenerated but also a little bit like he might take a bite out of his 'human' for waking him up.")
             print("\n+20 energy")
+            print("\n-60 happiness")
             self.energy += 20
+            self.happiness -= 60
 
         if sleep_choice == 2:
             print("\nWe do not know if we like co-regeneration with a Mocci cat. Mocci cat seems to like co-regeneration with his 'human'.")
@@ -190,11 +187,11 @@ class Needs:
             print("\nMocci cat looks refreshed but definitely like he wants a bite out of its 'human' now due to decreased hunger from regeneration.")
             print("\n+100 energy")
             print("\n-60 hunger")
+            print("\n-40 happiness")
             self.energy += 100
             self.hunger -= 60
+            self.happiness -= 40
 
-        print(f"\nCurrent energy level: {self.energy}")
-        print(f"\nCurrent hunger level: {self.hunger}")
         print("\n...")
         print("...\n")
         return self.energy

@@ -13,25 +13,37 @@ class Mood:
 
 
     def print_need_levels(self):
-            """Intro to need audit and prints need levels"""
-            print("\n...")
-            print("...\n")
-            print("\nYou have requested a need audit. Please see below for our findings.")
-            print("\nMocci cat also had input that he forced us to add. We do not take credit for his notes.")
+        """Intro to need audit and prints need levels"""
+        print("\n...")
+        print("...\n")
+        print("\nYou have requested a need audit. Please see below for our findings.\n")
 
-            # Print this to JSON file
-            need_levels = {
-                 "Hunger Level": self.needs.hunger,
-                 "Happiness Level": self.needs.happiness,
-                 "Energy Level": self.needs.energy,
-            }
+        # Print this to JSON file
+        need_levels = {
+            "Hunger Level": self.needs.hunger,
+            "Happiness Level": self.needs.happiness,
+            "Energy Level": self.needs.energy,
+        }
 
-            for key, value in need_levels.items():
-                 print(f"\n{key}: {value}")
+        for key, value in need_levels.items():
+            print(f"{key}: {value}")
 
+        if self.needs.hunger < 80 or self.needs.happiness < 60 or self.needs.energy <= 30:
             self.print_mocci_notes()
 
 
     def print_mocci_notes(self):
-         """"""
-         pass
+        """"""
+        print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
+
+        if self.needs.happiness < 60:
+            print("\n'My happiness is decreasing human. I demand you play with me and my fluffy string ball.'")
+
+        if self.needs.hunger < 80:
+            print("\n'I am demanding food now. You must run and fetch food, human! I will not wait.'")
+
+        if self.needs.energy <= 30:
+            print("\n'Do not bother me, human. I am too tired to deal with you.'")
+
+        print("\n...")
+        print("...\n")
