@@ -68,5 +68,5 @@ def menu_route(menu_selection):
         mood.print_need_levels()
         
 
-
-main()
+if __name__ == "__main__":
+    main()
