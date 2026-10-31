@@ -3,8 +3,6 @@
     game ends. Print the audits to the terminal as well
 """
 
-from needs import Needs
-from pathlib import Path
 import json
 
 class Mood:
@@ -31,23 +29,30 @@ class Mood:
             print(f"{key}: {value}")
 
         if self.needs.hunger < 80 or self.needs.happiness < 60 or self.needs.energy <= 30:
-            print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
-
-            if self.needs.happiness < 60:
-                mocci_note_happiness = ("\n'My happiness is decreasing human. I demand you play with me and my fluffy string ball.'")
-                print(mocci_note_happiness)
-
-            if self.needs.hunger < 80:
-                mocci_note_hunger = ("\n'I am demanding food now. You must run and fetch food, human! I will not wait.'")
-                print(mocci_note_hunger)
-
-            if self.needs.energy <= 30:
-                mocci_note_energy = ("\n'Do not bother me, human. I am too tired to deal with you.'")
-                print(mocci_note_energy)
+            self.mocci_ouput()
 
         print("\n...")
         print("...\n")
 
+        self.json_dump(need_levels)
+
+
+    def mocci_ouput(self):
+        print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
+
+        if self.needs.happiness < 60:
+            mocci_note_happiness = ("\n'My happiness is decreasing human. I demand you play with me and my fluffy string ball.'")
+            print(mocci_note_happiness)
+
+        if self.needs.hunger < 80:
+            mocci_note_hunger = ("\n'I am demanding food now. You must run and fetch food, human! I will not wait.'")
+            print(mocci_note_hunger)
+
+        if self.needs.energy <= 30:
+            mocci_note_energy = ("\n'Do not bother me, human. I am too tired to deal with you.'")
+            print(mocci_note_energy)
+
+
+    def json_dump(self, need_levels):
         with open("audit.json", "a") as file:
             file.write(json.dumps(need_levels) + "\n")
-
