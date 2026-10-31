@@ -38,21 +38,29 @@ class Needs:
         treat_choice = input("\nPlease choose 1-3: ")
         treat_choice = int(treat_choice)
 
-        print("\nMmmm the Mocci cat seemed to enjoy that treat.")
-
         self.calculate_hunger(treat_choice)
 
 
     def calculate_hunger(self, treat_choice):
         """Caculates new Hunger based off of treat choice from choose_treat()"""
         if treat_choice == 1:
+            print("\nMocci cat loves the crunchy little crackers, but they do not sustain. Pointless in our... 'human' eyes.")
+            print("\n+10 hunger")
             self.hunger += 10
 
         if treat_choice == 2:
+            print("\nMocci cat is much more sustained after the wet can food. We approve of this choice.")
+            print("\n+40 hunger")
+            print("\n+10 happiness")
             self.hunger += 40
             self.happiness += 10
 
         if treat_choice == 3:
+            print("\nWe have not directly witnessed what happens when Mocci cat consumes the flaky, green dust.")
+            print("We escape to a different room once it is consumed, so we have only seen the aftermath. We are " 
+                  "working on safety gear, so we can safely observe.")
+            print("\n-5 hunger")
+            print("\n+15 happiness")
             self.hunger -= 5
             self.happiness += 15
 
