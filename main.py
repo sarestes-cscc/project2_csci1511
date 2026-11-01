@@ -55,11 +55,13 @@ def main_menu():
     for key, value in menu.items():
         print(f"{key}: {value}")
 
-    menu_selection = input("\nPlease pick 1-4: ")
-    menu_selection = int(menu_selection)
-
-    menu_route(menu_selection)
-
+    try:
+        menu_selection = input("\nPlease pick 1-4: ")
+        menu_selection = int(menu_selection)
+        menu_route(menu_selection)
+    except:
+        print("\nPlease enter a valid option.")
+    
 
 def menu_route(menu_selection):
     """Routes player based on menu selection"""
