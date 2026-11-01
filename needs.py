@@ -36,20 +36,20 @@ class Needs:
     def choose_treat(self):
         """Allows player to choose from treat menu"""
         treat_choice = input("\nPlease choose 1-3: ")
-        treat_choice = int(treat_choice)
-
         self.calculate_hunger(treat_choice)
 
 
     def calculate_hunger(self, treat_choice):
         """Caculates new Hunger based off of treat choice from choose_treat()"""
-        if treat_choice == 1:
+        if treat_choice == "1":
+            treat_choice = int(treat_choice)
             print("\nMocci cat loves the crunchy little crackers, but they do not sustain. Pointless in our... 'human' eyes.")
             print("\n+10 hunger")
 
             self.hunger += 10
 
-        elif treat_choice == 2:
+        elif treat_choice == "2":
+            treat_choice = int(treat_choice)
             print("\nMocci cat is much more sustained after the wet can food. We approve of this choice.")
             print("\n+40 hunger")
             print("\n+10 happiness")
@@ -57,7 +57,8 @@ class Needs:
             self.hunger += 40
             self.happiness += 10
 
-        elif treat_choice == 3:
+        elif treat_choice == "3":
+            treat_choice = int(treat_choice)
             print("\nWe have not directly witnessed what happens when Mocci cat consumes the flaky, green dust.")
             print("We escape to a different room once it is consumed, so we have only seen the aftermath. We are " 
                   "working on safety gear, so we can safely observe.")
@@ -94,25 +95,26 @@ class Needs:
     def choose_toy(self):
         """Allows player to choose from the toy menu"""
         toy_choice = input("\nPlease choose 1-3: ")
-        toy_choice = int(toy_choice)
-        
         self.calculate_happiness(toy_choice)
 
 
     def calculate_happiness(self, toy_choice):
         """Calculates new happiness based off toy choice"""     
-        if toy_choice == 1:
+        if toy_choice == "1":
+            toy_choice = int(toy_choice)
             print("\nMocci the cat walks away from the most expensive happiness item, bored and uninterested.")
             print("\nMocci the cat seems to be of too high intelligence to fall for the magic light stick.")
             print("\n+ 0 happiness")
 
-        elif toy_choice == 2:
+        elif toy_choice == "2":
+            toy_choice = int(toy_choice)
             play_time = input("\nPlease enter amount of time spent with Mocci and happiness item (ex: '15' for 15 minutes): ")
             play_time = int(play_time)
 
             self.attention_affect(play_time)
 
-        elif toy_choice == 3:
+        elif toy_choice == "3":
+            toy_choice = int(toy_choice)
             print("\nMocci the cat seems thrilled about any time spent with his 'human' and the ball of fluffy string.")
             print("\nMocci's hunger and energy levels decreased due to play.")
             print("\n+20 happiness")
@@ -126,6 +128,7 @@ class Needs:
         else:
             print("\nPlease enter a valid choice between 1 and 3.")
             self.choose_toy()
+
 
     def attention_affect(self, play_time):
         """Calculates need levels based on amount of play time"""
@@ -171,14 +174,13 @@ class Needs:
     def choose_sleep(self):
         """Allows player to choose from the sleep menu"""
         sleep_choice = input("\nPlease choose 1-3: ")
-        sleep_choice = int(sleep_choice)
-            
         self.calculate_energy(sleep_choice)
 
 
     def calculate_energy(self, sleep_choice):
         """Caculates new energy based off of sleep choice from choose_sleep()"""
-        if sleep_choice == 1:
+        if sleep_choice == "1":
+            sleep_choice = int(sleep_choice)
             print("\nThe Mocci cat looks a little regenerated but also a little bit like he might take a bite out of his 'human' for waking him up.")
             print("\n+20 energy")
             print("\n-60 happiness")
@@ -186,7 +188,8 @@ class Needs:
             self.energy += 20
             self.happiness -= 60
 
-        if sleep_choice == 2:
+        elif sleep_choice == "2":
+            sleep_choice = int(sleep_choice)
             print("\nWe do not know if we like co-regeneration with a Mocci cat. Mocci cat seems to like co-regeneration with his 'human'.")
             print("\n+40 energy")
             print("\n-20 hunger")
@@ -194,7 +197,8 @@ class Needs:
             self.energy += 40
             self.hunger -= 20
 
-        if sleep_choice == 3:
+        elif sleep_choice == "3":
+            sleep_choice = int(sleep_choice)
             print("\nMocci cat looks refreshed but definitely like he wants a bite out of its 'human' now due to decreased hunger from regeneration.")
             print("\n+100 energy")
             print("\n-60 hunger")
@@ -203,3 +207,7 @@ class Needs:
             self.energy += 100
             self.hunger -= 60
             self.happiness -= 40
+
+        else:
+            print("\nPlease enter a valid choice between 1 and 3.")
+            self.choose_sleep()
