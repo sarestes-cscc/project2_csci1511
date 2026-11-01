@@ -27,14 +27,22 @@ def main():
 
         main_menu()
 
-        replay = input("\nWould you like to continue? y or n: ")
-        print("\n...")
-        print("...\n")
+        replay = input("\nWould you like to continue? yes or no: ")
+        check_replay(replay)
 
-        if replay == "n":
+        break
+
+def check_replay(replay):
+    if replay == "yes":
+        main_menu()
+
+    while replay != "yes" or "no":
+        replay = input("\nPlease enter either yes or no: ")
+        if replay == "yes":
+            main_menu()
+        if replay == "no":
             break
-
-
+            
 def main_menu():
     """Main menu selection process"""
     menu = {

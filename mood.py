@@ -16,7 +16,8 @@ class Mood:
         """Intro to need audit and prints need levels"""
         print("\n...")
         print("...\n")
-        print("\nYou have requested a need audit. Please see below for our findings.\n")
+        print("\nYou have requested a need audit. Please see below for our findings.")
+        print("You can see past audits in the audit.json file. Delete this file to reset it.\n")
 
         # Print this to JSON file
         need_levels = {
