@@ -27,21 +27,30 @@ def main():
 
         main_menu()
 
-        replay = input("\nWould you like to continue? yes or no: ")
-        check_replay(replay)
+        while True:
+            replay = input("\nWould you like to continue? yes or no: ")
+            if replay == "yes":
+                main_menu()
+            elif replay == "no":
+                break
+            else:
+                print("\nPlease enter a valid choice.")
 
         break
 
-def check_replay(replay):
-    if replay == "yes":
-        main_menu()
+def get_replay():
+    replay = input("\nWould you like to continue? yes or no: ")
+    check_replay(replay)
 
-    while replay != "yes" or "no":
-        replay = input("\nPlease enter either yes or no: ")
+def check_replay(replay):
+    while True:
         if replay == "yes":
-            main_menu()
-        if replay == "no":
+            return
+        elif replay == "no":
             break
+        else:
+            print("\nPlease enter a valid choice.")
+            get_replay()
             
 def main_menu():
     """Main menu selection process"""
@@ -51,7 +60,7 @@ def main_menu():
         3: "Put pet in nest for regeneration (Sleep)",
         4: "Audit pet's need levels (Mood Checker)",    
     }
-    print("Emotional level modifiers:\n")
+    print("\nEmotional level modifiers:\n")
     for key, value in menu.items():
         print(f"{key}: {value}")
 
