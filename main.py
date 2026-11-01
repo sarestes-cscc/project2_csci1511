@@ -38,9 +38,11 @@ def main():
 
         break
 
+
 def get_replay():
     replay = input("\nWould you like to continue? yes or no: ")
     check_replay(replay)
+
 
 def check_replay(replay):
     while True:
@@ -51,6 +53,7 @@ def check_replay(replay):
         else:
             print("\nPlease enter a valid choice.")
             get_replay()
+
             
 def main_menu():
     """Main menu selection process"""
@@ -64,12 +67,18 @@ def main_menu():
     for key, value in menu.items():
         print(f"{key}: {value}")
 
-    try:
-        menu_selection = input("\nPlease pick 1-4: ")
-        menu_selection = int(menu_selection)
-        menu_route(menu_selection)
-    except ValueError:
-        print("\nPlease enter a valid option.")
+    try_menu_selection()
+
+
+def try_menu_selection():
+    while True:
+        try:
+            menu_selection = input("\nPlease pick 1-4: ")
+            menu_selection = int(menu_selection)
+            menu_route(menu_selection)
+            break
+        except ValueError:
+            print("\nPlease enter a valid option.")
     
 
 def menu_route(menu_selection):
@@ -77,14 +86,18 @@ def menu_route(menu_selection):
     if menu_selection == 1:
         needs.print_treat_menu()
 
-    if menu_selection == 2:
+    elif menu_selection == 2:
         needs.print_toy_menu()
 
-    if menu_selection == 3:
+    elif menu_selection == 3:
         needs.print_sleep_menu()
 
-    if menu_selection == 4:
+    elif menu_selection == 4:
         mood.print_need_levels()
+
+    else:
+        print("\nPlease enter a valid option.")
+        try_menu_selection()
         
 
 if __name__ == "__main__":
