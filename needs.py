@@ -46,28 +46,30 @@ class Needs:
         if treat_choice == 1:
             print("\nMocci cat loves the crunchy little crackers, but they do not sustain. Pointless in our... 'human' eyes.")
             print("\n+10 hunger")
+
             self.hunger += 10
 
-        if treat_choice == 2:
+        elif treat_choice == 2:
             print("\nMocci cat is much more sustained after the wet can food. We approve of this choice.")
             print("\n+40 hunger")
             print("\n+10 happiness")
+
             self.hunger += 40
             self.happiness += 10
 
-        if treat_choice == 3:
+        elif treat_choice == 3:
             print("\nWe have not directly witnessed what happens when Mocci cat consumes the flaky, green dust.")
             print("We escape to a different room once it is consumed, so we have only seen the aftermath. We are " 
                   "working on safety gear, so we can safely observe.")
             print("\n-5 hunger")
             print("\n+15 happiness")
+
             self.hunger -= 5
             self.happiness += 15
 
-        print("\n...")
-        print("...\n")
-        return self.hunger
-
+        else:
+            print("\nPlease enter a valid choice between 1 and 3.")
+            self.choose_treat()
 
 
     def print_toy_menu(self):
@@ -104,13 +106,13 @@ class Needs:
             print("\nMocci the cat seems to be of too high intelligence to fall for the magic light stick.")
             print("\n+ 0 happiness")
 
-        if toy_choice == 2:
+        elif toy_choice == 2:
             play_time = input("\nPlease enter amount of time spent with Mocci and happiness item (ex: '15' for 15 minutes): ")
             play_time = int(play_time)
 
             self.attention_affect(play_time)
 
-        if toy_choice == 3:
+        elif toy_choice == 3:
             print("\nMocci the cat seems thrilled about any time spent with his 'human' and the ball of fluffy string.")
             print("\nMocci's hunger and energy levels decreased due to play.")
             print("\n+20 happiness")
@@ -121,10 +123,9 @@ class Needs:
             self.hunger -= 10
             self.energy -= 40
 
-        print("\n...")
-        print("...\n")
-        return self.happiness
-
+        else:
+            print("\nPlease enter a valid choice between 1 and 3.")
+            self.choose_toy()
 
     def attention_affect(self, play_time):
         """Calculates need levels based on amount of play time"""
@@ -181,6 +182,7 @@ class Needs:
             print("\nThe Mocci cat looks a little regenerated but also a little bit like he might take a bite out of his 'human' for waking him up.")
             print("\n+20 energy")
             print("\n-60 happiness")
+
             self.energy += 20
             self.happiness -= 60
 
@@ -188,6 +190,7 @@ class Needs:
             print("\nWe do not know if we like co-regeneration with a Mocci cat. Mocci cat seems to like co-regeneration with his 'human'.")
             print("\n+40 energy")
             print("\n-20 hunger")
+
             self.energy += 40
             self.hunger -= 20
 
@@ -196,10 +199,7 @@ class Needs:
             print("\n+100 energy")
             print("\n-60 hunger")
             print("\n-40 happiness")
+
             self.energy += 100
             self.hunger -= 60
             self.happiness -= 40
-
-        print("\n...")
-        print("...\n")
-        return self.energy
