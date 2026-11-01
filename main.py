@@ -68,7 +68,7 @@ def main_menu():
         menu_selection = input("\nPlease pick 1-4: ")
         menu_selection = int(menu_selection)
         menu_route(menu_selection)
-    except:
+    except ValueError:
         print("\nPlease enter a valid option.")
     
 
