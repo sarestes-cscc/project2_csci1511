@@ -1,6 +1,7 @@
 """
-    Needs Class methods
-    Hunger, Energy, Play
+    Virtual Pet Simulator
+    Sarah Estes 11/1/27
+    Needs Class methods handling updated needs calculations and user input
 """
 
 from pet import Pet

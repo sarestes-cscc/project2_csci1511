@@ -1,9 +1,13 @@
-""""""
+"""
+    Virtual Pet Simulator
+    Sarah Estes 11/1/27
+    Testing functions for calculations
+"""
 
 from needs import Needs
 
 def test_calculate_hunger():
-    """"""
+    """Tests calculate_hunger"""
     needs = Needs()
 
     starting_hunger = needs.hunger
@@ -12,7 +16,7 @@ def test_calculate_hunger():
 
 
 def test_calculate_happiness():
-    """"""
+    """Tests calculate_happiness"""
     needs = Needs()
 
     starting_happiness = needs.happiness
@@ -26,7 +30,7 @@ def test_calculate_happiness():
 
 
 def test_calculate_energy():
-    """"""
+    """Tests calculate_energy"""
     needs = Needs()
 
     starting_energy = needs.energy
@@ -38,7 +42,7 @@ def test_calculate_energy():
 
 
 def test_attention_affect():
-    """"""
+    """Tests the attention_affect method calculations"""
     needs = Needs()
     starting_happiness = needs.happiness
     starting_hunger = needs.hunger

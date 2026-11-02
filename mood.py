@@ -1,6 +1,7 @@
 """
-    Need audit methods - JSON file will be used here to track need audits if multiple are called before 
-    game ends. Print the audits to the terminal as well
+    Virtual Pet Simulator
+    Sarah Estes 11/1/27
+    Holds the need audit methods, incorporates json dumps for need audit data tracking
 """
 
 import json
@@ -39,6 +40,7 @@ class Mood:
 
 
     def mocci_ouput(self):
+        """Prints Mocci's thoughts based on need levels"""
         print("\nMocci cat forced additional notes upon us. This is what Mocci cat had to say about his current state:")
 
         if self.needs.happiness < 60:
@@ -55,5 +57,6 @@ class Mood:
 
 
     def json_dump(self, need_levels):
+        """Dumps need audit levels into json file"""
         with open("audit.json", "a") as file:
             file.write(json.dumps(need_levels) + "\n")

@@ -1,6 +1,7 @@
 """ 
-    Main game file 
-    Virtual pet terminal
+    Virtual Pet Simulator
+    Sarah Estes 11/1/27
+    Main Game Loop for Pet Simulator
 """
 
 
@@ -40,11 +41,13 @@ def main():
 
 
 def get_replay():
+    """Replay loop call"""
     replay = input("\nWould you like to continue? yes or no: ")
     check_replay(replay)
 
 
 def check_replay(replay):
+    """Checks user's replay response"""
     while True:
         if replay == "yes":
             return
@@ -73,6 +76,7 @@ def main_menu():
 
 
 def try_menu_selection():
+    """Menu selection ValueError try except while loop"""
     while True:
         try:
             menu_selection = input("\nPlease pick 1-4: ")
