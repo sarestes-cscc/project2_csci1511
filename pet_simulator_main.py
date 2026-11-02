@@ -57,6 +57,8 @@ def check_replay(replay):
             
 def main_menu():
     """Main menu selection process"""
+    print("\n...")
+    print("...\n")
     menu = {
         1: "Give your pet sustenance (Feed)", 
         2: "Play with unnecessary items bought for happiness (Play)",
