@@ -5,6 +5,7 @@
 """
 
 import json
+import os
 
 class Mood:
     """Handles mood and need level actions"""
@@ -56,7 +57,25 @@ class Mood:
             print(mocci_note_energy)
 
 
+    # def json_dump(self, need_levels):
+    #     """Dumps need audit levels into json file"""
+    #     with open("audit.json", "a") as file:
+    #         file.write(json.dumps(need_levels) + "\n")
+
     def json_dump(self, need_levels):
         """Dumps need audit levels into json file"""
-        with open("audit.json", "a") as file:
+        with open("audit.json", "r+") as file:
+            first_character = file.read(1)
+            if not first_character:
+                file.write(('[\n'))
+                file.write(json.dumps(need_levels))
+                file.write('\n')
+                file.write((']'))
+                return
+            # Seek_end
+            # Go 4 bytes from end of file
+            file.seek(0, 2)
+            file.seek(file.tell() - 3, os.SEEK_SET)
+            file.write(",\n")
             file.write(json.dumps(need_levels) + "\n")
+            file.write((']'))
