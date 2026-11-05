@@ -64,13 +64,23 @@ class Mood:
 
     def json_dump(self, need_levels):
         """Dumps need audit levels into json file"""
+        file_path = "audit.json"
+
+        if not os.path.exists(file_path):
+            with open(file_path, "w") as file:
+                file.write("[\n")
+                file.write(json.dumps(need_levels))
+                file.write("\n")
+                file.write("]")
+            return
+        
         with open("audit.json", "r+") as file:
             first_character = file.read(1)
             if not first_character:
-                file.write(('[\n'))
+                file.write("[\n")
                 file.write(json.dumps(need_levels))
-                file.write('\n')
-                file.write((']'))
+                file.write("\n")
+                file.write("]")
                 return
             # Seek_end
             # Go 4 bytes from end of file
@@ -78,4 +88,4 @@ class Mood:
             file.seek(file.tell() - 3, os.SEEK_SET)
             file.write(",\n")
             file.write(json.dumps(need_levels) + "\n")
-            file.write((']'))
+            file.write("]")
